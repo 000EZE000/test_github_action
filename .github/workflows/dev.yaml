@@ -9,4 +9,15 @@ jobs:
     steps:
       - name: test
         run: |
-         ping google.com -w 2
+         echo hola
+      - name: scp pipelines
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          user: ${{ secrets.SSH_USER }}
+          pass: ${{ secrets.SSH_PASS }}
+          port: ${{ secrets.SSH_PORT }}
+          connect_timeout: 10s
+          first_ssh: |
+            ls -la  
+
