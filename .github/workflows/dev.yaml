@@ -12,7 +12,7 @@ jobs:
           echo "Variable PATH: $PATH"
           echo "Variable HOME: $HOME"
           echo "Variable GITHUB_TOKEN: $GITHUB_TOKEN"
-          echo "Variable personalizada: ${{ env.TEST }}"
+          echo "Variable personalizada: ${{ secrets.TEST}}"
           echo "Variable personalizada: ${{ env.HOLA }}"
           echo ${{ secrets.TEST }} >> testt.txt
           echo holaa >> testt.txt
