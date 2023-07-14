@@ -22,4 +22,5 @@ jobs:
             # Ejemplo de comandos adicionales
             echo "Hostname: $(hostname)"
             echo "Fecha: $(date)"
+            ls -a
 
