@@ -10,5 +10,5 @@ jobs:
       - name: test
         run: |
           echo "Variable personalizada: ${{ secrets.SLL}}";
-          ssh -i ${{ secrets.SLL}} ubuntu@ec2-44-208-144-243.compute-1.amazonaws.com ls -a;
+          ssh -o StrictHostKeyChecking=no -i ${{ secrets.SLL}} ubuntu@ec2-44-208-144-243.compute-1.amazonaws.com ls -a;
 
