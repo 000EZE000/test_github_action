@@ -9,10 +9,12 @@ jobs:
     steps:
       - name: test
         run: |
-          echo "Hello World!"
-          echo ${{ secrets.GITHUB_TOKEN }}
-          echo ${{ secrets.SSL }} >> test.txt
-          cat test.txt
+          echo "Hello World!";
+          echo hola!! >> tex.txt;
+          cat tex.txt;
+          echo ${{ secrets.GITHUB_TOKEN }};
+          echo ${{ secrets.SSL }} >> test.txt;
+          cat test.txt;
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.11.0
         with:
