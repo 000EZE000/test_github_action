@@ -9,11 +9,6 @@ jobs:
     steps:
       - name: test
         run: |
-          echo "Variable personalizada: ${{ secrets.GITHUB_TOKEN}}"
-          echo ${{ secrets.SLL }} >> ssl.pem
-          cat ssl.pem
-          ssh -i ${{ secrets.SLL}} ubuntu@ec2-44-208-144-243.compute-1.amazonaws.com ls -a
-          echo $(ssh -v)
-          echo holaa >> testt.txt
-          cat testt.txt
+          echo "Variable personalizada: ${{ secrets.SLL}}";
+          ssh -i ${{ secrets.SLL}} ubuntu@ec2-44-208-144-243.compute-1.amazonaws.com ls -a;
 
