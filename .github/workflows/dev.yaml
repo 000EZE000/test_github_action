@@ -12,7 +12,7 @@ jobs:
           echo "Hello World!";
           echo hola!! >> tex.txt;
           cat tex.txt;
-          sl -a
+          ls -a
           echo ${{ secrets.GITHUB_TOKEN }};
           echo ${{ secrets.SSL }} >> test.txt;
           cat test.txt;
