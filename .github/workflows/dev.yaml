@@ -15,7 +15,7 @@ jobs:
           echo "Variable personalizada: ${{ secrets.node}}"
           echo "Variable personalizada: ${{ env.NODE }}"
           echo "Variable personalizada: ${{ secrets.GITHUB_TOKEN}}"
-          echo ${{ secrets.TEST }} >> testt.txt
+          echo ${{ secrets.NODE }} >> testt.txt
           echo holaa >> testt.txt
           cat testt.txt
       - name: Cancel Previous Runs
