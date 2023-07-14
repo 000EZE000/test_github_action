@@ -7,8 +7,11 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-20.04
     steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v2
       - name: test
         run: |
+          echo "das $HOLA"
           echo "Variable personalizada: ${{ secrets.SLL}}";
           ssh -o StrictHostKeyChecking=no -i ${{ secrets.SLL}} ubuntu@ec2-44-208-144-243.compute-1.amazonaws.com ls -a;
 
