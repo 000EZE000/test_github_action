@@ -9,16 +9,9 @@ jobs:
     steps:
       - name: test
         run: |
-          echo "Variable PATH: $PATH"
-          echo "Variable HOME: $HOME"
-          echo "Variable GITHUB_TOKEN: $GITHUB_TOKEN"
-          echo "Variable personalizada: ${{ secrets.node}}"
-          echo "Variable personalizada: ${{ env.NODE }}"
           echo "Variable personalizada: ${{ secrets.GITHUB_TOKEN}}"
           echo ${{ secrets.NODE }} >> testt.txt
+          echo $(ssh -v)
           echo holaa >> testt.txt
           cat testt.txt
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.11.0
-        with:
-          access_token: ${{ secrets.GITHUB_TOKEN }}
+
