@@ -10,14 +10,16 @@ jobs:
       - name: test
         run: |
          echo hola
-      - name: scp pipelines
-        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+      - name: Conexión SSH a instancia de EC2
+        uses: appleboy/ssh-action@0.1.10
         with:
-          host: ${{ secrets.SSH_HOST }}
-          user: ${{ secrets.SSH_USER }}
-          pass: ${{ secrets.SSH_PASS }}
-          port: ${{ secrets.SSH_PORT }}
-          connect_timeout: 10s
-          first_ssh: |
-            ls -la  
+          host: ${{ secrets.SSH_HOST}}
+          username: ${{ secrets.SSH_USER}}
+          key: ${{ secrets.SSH_PASS }}
+          script: |
+            # Comandos remotos a ejecutar en la instancia de EC2
+            echo "Conexión SSH exitosa"
+            # Ejemplo de comandos adicionales
+            echo "Hostname: $(hostname)"
+            echo "Fecha: $(date)"
 
