@@ -11,7 +11,6 @@ jobs:
         uses: actions/checkout@v2
       - name: test
         run: |
-          echo "das $HOLA"
-          echo "Variable personalizada: ${{ secrets.SLL}}";
-          ssh -o StrictHostKeyChecking=no -i ${{ secrets.SLL}} ubuntu@ec2-44-208-144-243.compute-1.amazonaws.com ls -a;
+          echo  $HOLA
+          ssh -o StrictHostKeyChecking=no -i ${{secrets.SLL}} ubuntu@44.208.144.243 ls -a;
 
