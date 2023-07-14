@@ -11,6 +11,6 @@ jobs:
         uses: actions/checkout@v2
       - name: test
         run: |
-          echo  $HOLA
           ssh -o StrictHostKeyChecking=no -i ${{secrets.SLL}} ubuntu@44.208.144.243 ls -a;
+          echo  $HOLA
 
