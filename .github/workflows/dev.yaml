@@ -13,7 +13,7 @@ jobs:
           echo "Variable HOME: $HOME"
           echo "Variable GITHUB_TOKEN: $GITHUB_TOKEN"
           echo "Variable personalizada: ${{ secrets.node}}"
-          echo "Variable personalizada: ${{ env.node }}"
+          echo "Variable personalizada: ${{ env.NODE }}"
           echo "Variable personalizada: ${{ secrets.GITHUB_TOKEN}}"
           echo ${{ secrets.TEST }} >> testt.txt
           echo holaa >> testt.txt
