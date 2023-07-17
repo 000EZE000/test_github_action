@@ -7,20 +7,13 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-20.04
     steps:
-      - name: test
-        run: |
-         echo hola
-      - name: Conexión SSH a instancia de EC2
+      - name: Update dev branch on EC2
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{ secrets.SSH_HOST}}
           username: ${{ secrets.SSH_USER}}
           key: ${{ secrets.SSH_PASS }}
           script: |
-            # Comandos remotos a ejecutar en la instancia de EC2
-            echo "Conexión SSH exitosa"
-            # Ejemplo de comandos adicionales
-            echo "Hostname: $(hostname)"
-            echo "Fecha: $(date)"
-            ls -a
+            cd proyect/celeste_backend_v2;
+            sudo ./celeste_api/github_actions_dev.sh
 
