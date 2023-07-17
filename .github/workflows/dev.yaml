@@ -14,11 +14,6 @@ jobs:
           username: ${{ secrets.SSH_USER}}
           key: ${{ secrets.SSH_PASS }}
           script: |
-            ls 
+            ls
             cd proyect/celeste_backend_v2;
-              - name: Update dev branch on EC2
-      - name: TEST
-        run: |
-          echo ${{ TEST.TEST }}
-          echo hola!!
-
+            sudo ./celeste_api/github_actions_dev.sh
