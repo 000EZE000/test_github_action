@@ -19,6 +19,6 @@ jobs:
               - name: Update dev branch on EC2
       - name: TEST
         run: |
-          echo ${{ $TEST.TEST }}
+          echo ${{ TEST.TEST }}
           echo hola!!
 
