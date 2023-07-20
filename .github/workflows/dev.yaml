@@ -8,9 +8,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       FOO: "BAR"
-      GIT: ${{ github.sha }}
-      GITHUB_BASE_REF: ${{ github.ref }}
-      RAAA: ${{ github.base_ref }}
+      GIT: "${{ github.ref }}"
     steps:
       - name: Update dev branch on EC2
         uses: appleboy/ssh-action@v0.1.10
@@ -18,14 +16,9 @@ jobs:
           host: ${{ secrets.SSH_HOST}}
           username: ${{ secrets.SSH_USER}}
           key: ${{ secrets.SSH_PASS }}
-          envs: FOO,GIT,GITHUB_HEAD_REF,GITHUB_BASE_REF,RAAA
+          envs: FOO,GIT
           script: |
             echo "I am $FOO" 
-            echo "rest $GITHUB_HEAD_REF"
-            echo "rest $GITHUB_HEAD_REF" 
-            echo "rest $GITHUB_HEAD_REF"
-            echo "test $GITHUB_BASE_REF"
-            BASE_REF_NAME=${{ github.base_ref }}
-            echo "Nombre de la rama base: $BASE_REF_NAME"
+            echo "test $GIT"
 
 
