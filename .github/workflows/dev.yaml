@@ -9,11 +9,15 @@ jobs:
     steps:
       - name: Update dev branch on EC2
         uses: appleboy/ssh-action@v0.1.10
+        env:
+          FOO: "BAR"
+          BAR: "FOO"
         with:
           host: ${{ secrets.SSH_HOST}}
           username: ${{ secrets.SSH_USER}}
           key: ${{ secrets.SSH_PASS }}
           script: |
             ls
+            echo $FOO 
             cd proyect/celeste_backend_v2;
-            sudo ./celeste_api/github_actions_dev.sh
+
