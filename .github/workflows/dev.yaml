@@ -12,6 +12,7 @@ jobs:
         env:
           FOO: "BAR"
           BAR: "FOO"
+          GITHUB_BASE_REF: ${{github.GITHUB_HEAD_REF}}
         with:
           host: ${{ secrets.SSH_HOST}}
           username: ${{ secrets.SSH_USER}}
