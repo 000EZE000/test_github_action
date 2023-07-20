@@ -11,18 +11,18 @@ jobs:
         uses: appleboy/ssh-action@v0.1.10
         env:
           FOO: "BAR"
-          GITHUB_HEAD_REF: ${{ github.sha }}
+          GIT: ${{ github.sha }}
           GITHUB_BASE_REF: ${{ github.ref }}
           RAAA: ${{ github.base_ref }}
         with:
           host: ${{ secrets.SSH_HOST}}
           username: ${{ secrets.SSH_USER}}
           key: ${{ secrets.SSH_PASS }}
-          envs: FOO,GITHUB_HEAD_REF,GITHUB_HEAD_REF,GITHUB_BASE_REF,RAAA
+          envs: FOO,GIT,GITHUB_HEAD_REF,GITHUB_BASE_REF,RAAA
           script: |
             echo "I am $FOO" 
             echo "rest $GITHUB_HEAD_REF"
-            echo "rest $RAAA" 
+            echo "rest $GITHUB_HEAD_REF" 
             echo "rest $GITHUB_HEAD_REF"
             echo "test $GITHUB_BASE_REF"
             BASE_REF_NAME=${{ github.base_ref }}
