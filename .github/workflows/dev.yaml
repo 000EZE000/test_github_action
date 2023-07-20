@@ -20,5 +20,6 @@ jobs:
           script: |
             ls
             echo "I am $FOO" 
+            echo "rest $GITHUB_HEAD_REF" 
             cd proyect/celeste_backend_v2;
 
