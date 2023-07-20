@@ -9,9 +9,8 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       FOO: "BAR"
-      GIT: "${{ github.head_ref }}"
-      JSON: "${{ toJSON(github) }}"
-      OTHER: "${{github.event.pull_request.head.ref}}"
+      GIT: "${{ github.base_ref }}"
+      OTHER: "${{github.head_ref}}"
     steps:
       - name: Update dev branch on EC2
         uses: appleboy/ssh-action@v0.1.10
@@ -24,6 +23,5 @@ jobs:
             echo "I am $FOO" 
             DEV=${GIT}
             echo "test $GIT"
-            echo "test $DEV"
             echo "test $JSON"
             echo "test $OTHER"
