@@ -21,5 +21,7 @@ jobs:
             ls
             echo "I am $FOO" 
             echo "rest $GITHUB_HEAD_REF" 
+            echo "rest $GITHUB_HEAD_REF"
+            echo "test $GITHUB_BASE_REF"
             cd proyect/celeste_backend_v2;
 
