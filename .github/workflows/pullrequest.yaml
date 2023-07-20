@@ -10,7 +10,7 @@ jobs:
     env:
       FOO: "BAR"
       GIT: "${{ github.head_ref }}"
-      JSON: "${{ ${{ toJSON(github) }}"
+      JSON: "${{ toJSON(github) }}"
       OTHER: "${{github.event.pull_request.head.ref}}"
     steps:
       - name: Update dev branch on EC2
