@@ -6,14 +6,14 @@ jobs:
   develop:
     permissions: write-all
     runs-on: ubuntu-20.04
+    env:
+      FOO: "BAR"
+      GIT: ${{ github.sha }}
+      GITHUB_BASE_REF: ${{ github.ref }}
+      RAAA: ${{ github.base_ref }}
     steps:
       - name: Update dev branch on EC2
         uses: appleboy/ssh-action@v0.1.10
-        env:
-          FOO: "BAR"
-          GIT: ${{ github.sha }}
-          GITHUB_BASE_REF: ${{ github.ref }}
-          RAAA: ${{ github.base_ref }}
         with:
           host: ${{ secrets.SSH_HOST}}
           username: ${{ secrets.SSH_USER}}
