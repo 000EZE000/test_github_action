@@ -18,6 +18,6 @@ jobs:
           key: ${{ secrets.SSH_PASS }}
           script: |
             ls
-            echo $FOO 
+            echo "I am $FOO" 
             cd proyect/celeste_backend_v2;
 
