@@ -12,7 +12,7 @@ jobs:
         env:
           FOO: "BAR"
           BAR: "FOO"
-          GITHUB_BASE_REF: ${{GITHUB_HEAD_REF}}
+          GITHUB_BASE_REF: ${{GITHUB_BASE_REF}}
           GITHUB_HEAD_REF: ${{GITHUB_HEAD_REF}}
         with:
           host: ${{ secrets.SSH_HOST}}
