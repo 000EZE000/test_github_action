@@ -16,7 +16,7 @@ jobs:
           host: ${{ secrets.SSH_HOST}}
           username: ${{ secrets.SSH_USER}}
           key: ${{ secrets.SSH_PASS }}
-          envs: FOO,BAR
+          envs: FOO,BAR,GITHUB_HEAD_REF,GITHUB_HEAD_REF,GITHUB_BASE_REF
           script: |
             ls
             echo "I am $FOO" 
