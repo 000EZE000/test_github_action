@@ -1,0 +1,26 @@
+name: push changes to dev
+on:
+  push:
+    branches: [dev]
+jobs:
+  develop:
+    permissions: write-all
+    runs-on: ubuntu-20.04
+    env:
+      FOO: "BAR"
+      GIT: "${{ github.ref }}"
+    steps:
+      - name: Update dev branch on EC2
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.SSH_HOST}}
+          username: ${{ secrets.SSH_USER}}
+          key: ${{ secrets.SSH_PASS }}
+          envs: FOO,GIT
+          script: |
+            echo "I am $FOO" 
+            DEV=${GIT#refs/heads/}
+            echo "test $GIT"
+            echo "test $DEV"
+
+
