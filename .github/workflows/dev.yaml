@@ -16,6 +16,7 @@ jobs:
           host: ${{ secrets.SSH_HOST}}
           username: ${{ secrets.SSH_USER}}
           key: ${{ secrets.SSH_PASS }}
+          envs: FOO,BAR
           script: |
             ls
             echo "I am $FOO" 
