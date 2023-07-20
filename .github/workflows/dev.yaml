@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       FOO: "BAR"
-      GIT: "${{ github.ref }}"
+      GIT: "${{ github.ref#refs/heads/ }}"
     steps:
       - name: Update dev branch on EC2
         uses: appleboy/ssh-action@v0.1.10
