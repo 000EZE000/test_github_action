@@ -1,0 +1,20 @@
+{
+  "name": "test_github_action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/000EZE000/test_github_action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/000EZE000/test_github_action/issues"
+  },
+  "homepage": "https://github.com/000EZE000/test_github_action#readme"
+}
